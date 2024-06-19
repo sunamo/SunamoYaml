@@ -1,103 +1,335 @@
-namespace SunamoYaml;
-
 using System.Collections;
 using System.Net;
 using System.Text;
-
-internal class Exceptions
+namespace
+#if SunamoBts
+SunamoBts
+#elif SunamoCollections
+SunamoCollections
+#elif SunamoChar
+SunamoChar
+#elif SunamoDevCode
+SunamoDevCode
+#elif SunamoFileSystem
+SunamoFileSystem
+#elif SunamoGitBashBuilder
+SunamoGitBashBuilder
+#elif SunamoHtml
+SunamoHtml
+#elif SunamoLogging
+SunamoLogging
+#elif SunamoShared
+SunamoShared
+#elif SunamoString
+SunamoString
+#elif SunamoStringJoin
+SunamoStringJoin
+#elif SunamoArgs
+SunamoArgs
+#elif SunamoAsync
+SunamoAsync
+#elif SunamoAttributes
+SunamoAttributes
+#elif SunamoCl
+SunamoCl
+#elif SunamoClearScript
+SunamoClearScript
+#elif SunamoClipboard
+SunamoClipboard
+#elif SunamoCollectionOnDrive
+SunamoCollectionOnDrive
+#elif SunamoCollectionsChangeContent
+SunamoCollectionsChangeContent
+#elif SunamoCollectionsGeneric
+SunamoCollectionsGeneric
+#elif SunamoCollectionsGenericShared
+SunamoCollectionsGenericShared
+#elif SunamoCollectionsIndexesWithNull
+SunamoCollectionsIndexesWithNull
+#elif SunamoCollectionsNonGeneric
+SunamoCollectionsNonGeneric
+#elif SunamoCollectionsShared
+SunamoCollectionsShared
+#elif SunamoCollectionsValuesTableGrid
+SunamoCollectionsValuesTableGrid
+#elif SunamoCollectionWithoutDuplicates
+SunamoCollectionWithoutDuplicates
+#elif SunamoColors
+SunamoColors
+#elif SunamoCompare
+SunamoCompare
+#elif SunamoConverters
+SunamoConverters
+#elif SunamoCrypt
+SunamoCrypt
+#elif SunamoDevCode
+SunamoDevCode
+#elif SunamoCsv
+SunamoCsv
+#elif SunamoData
+SunamoData
+#elif SunamoDateTime
+SunamoDateTime
+#elif SunamoDebugCollection
+SunamoDebugCollection
+#elif SunamoDebugging
+SunamoDebugging
+#elif SunamoDebugIO
+SunamoDebugIO
+#elif SunamoDelegates
+SunamoDelegates
+#elif SunamoDictionary
+SunamoDictionary
+#elif SunamoEmbeddedResources
+SunamoEmbeddedResources
+#elif SunamoEnums
+SunamoEnums
+#elif SunamoEnumsHelper
+SunamoEnumsHelper
+#elif SunamoExceptions
+SunamoExceptions
+#elif SunamoExtensions
+SunamoExtensions
+#elif SunamoFileExtensions
+SunamoFileExtensions
+#elif SunamoFileIO
+SunamoFileIO
+#elif SunamoFluentFtp
+SunamoFluentFtp
+#elif SunamoFtp
+SunamoFtp
+#elif SunamoFubuCore
+SunamoFubuCore
+#elif SunamoFubuCsProjFile
+SunamoFubuCsProjFile
+#elif SunamoGoogleSheets
+SunamoGoogleSheets
+#elif SunamoHttp
+SunamoHttp
+#elif SunamoIni
+SunamoIni
+#elif SunamoInterfaces
+SunamoInterfaces
+#elif SunamoJson
+SunamoJson
+#elif SunamoLang
+SunamoLang
+#elif SunamoLogMessage
+SunamoLogMessage
+#elif SunamoMail
+SunamoMail
+#elif SunamoMarkdown
+SunamoMarkdown
+#elif SunamoMime
+SunamoMime
+#elif SunamoMsgReader
+SunamoMsgReader
+#elif SunamoNuGetProtocol
+SunamoNuGetProtocol
+#elif SunamoNumbers
+SunamoNumbers
+#elif SunamoNumbersShared
+SunamoNumbersShared
+#elif SunamoOctokit
+SunamoOctokit
+#elif SunamoPackageJson
+SunamoPackageJson
+#elif SunamoParsing
+SunamoParsing
+#elif SunamoPercentCalculator
+SunamoPercentCalculator
+#elif SunamoPInvoke
+SunamoPInvoke
+#elif SunamoPlatformUwpInterop
+SunamoPlatformUwpInterop
+#elif SunamoPS
+SunamoPS
+#elif SunamoRandom
+SunamoRandom
+#elif SunamoReflection
+SunamoReflection
+#elif SunamoRegex
+SunamoRegex
+#elif SunamoRoslyn
+SunamoRoslyn
+#elif SunamoRss
+SunamoRss
+#elif SunamoSerializer
+SunamoSerializer
+#elif SunamoSolutionsIndexer
+SunamoSolutionsIndexer
+#elif SunamoStopwatch
+SunamoStopwatch
+#elif SunamoStringData
+SunamoStringData
+#elif SunamoStringFormat
+SunamoStringFormat
+#elif SunamoStringGetLines
+SunamoStringGetLines
+#elif SunamoStringGetString
+SunamoStringGetString
+#elif SunamoStringJoinPairs
+SunamoStringJoinPairs
+#elif SunamoStringParts
+SunamoStringParts
+#elif SunamoStringReplace
+SunamoStringReplace
+#elif SunamoStringShared
+SunamoStringShared
+#elif SunamoStringSplit
+SunamoStringSplit
+#elif SunamoStringSubstring
+SunamoStringSubstring
+#elif SunamoStringTrim
+SunamoStringTrim
+#elif SunamoText
+SunamoText
+#elif SunamoTextOutputGenerator
+SunamoTextOutputGenerator
+#elif SunamoThisApp
+SunamoThisApp
+#elif SunamoThread
+SunamoThread
+#elif SunamoTidy
+SunamoTidy
+#elif SunamoTwoWayDictionary
+SunamoTwoWayDictionary
+#elif SunamoTypeOfMessage
+SunamoTypeOfMessage
+#elif SunamoUnderscore
+SunamoUnderscore
+#elif SunamoUri
+SunamoUri
+#elif SunamoUriWebServices
+SunamoUriWebServices
+#elif SunamoValues
+SunamoValues
+#elif SunamoVcf
+SunamoVcf
+#elif SunamoWikipedia
+SunamoWikipedia
+#elif SunamoWinStd
+SunamoWinStd
+#elif SunamoXlfKeys
+SunamoXlfKeys
+#elif SunamoXliffParser
+SunamoXliffParser
+#elif SunamoXml
+SunamoXml
+#elif SunamoYaml
+SunamoYaml
+#elif SunamoYouTube
+SunamoYouTube
+#elif SunamoCollectionsTo
+SunamoCollectionsTo
+#elif SunamoGetFiles
+SunamoGetFiles
+#elif SunamoGetFolders
+SunamoGetFolders
+#elif SunamoXlfEngine
+SunamoXlfEngine
+#elif SunamoDictionaryToDelete
+SunamoDictionaryToDelete
+#elif SunamoDotnetCmdBuilder
+SunamoDotnetCmdBuilder
+#else
+SunamoExceptions
+#endif
+;
+public class Exceptions
 {
-    internal static string UseRlc(string before)
+    public static string UseRlc(string before)
     {
         return CheckBefore(before) + "Don't implement, use methods in rlc";
     }
     #region MyRegion
-    internal static string RepeatAfterTimeXTimesFailed(string before, int times, int timeoutInMs, string address,
+    public static string RepeatAfterTimeXTimesFailed(string before, int times, int timeoutInMs, string address,
     int sharedAlgorithmslastError)
     {
         return before +
         $"Loading uri {address} failed {times} ({timeoutInMs} ms timeout) HTTP Error: {sharedAlgorithmslastError}";
     }
-    internal static string NotInt(string before, string what, int? value)
+    public static string NotInt(string before, string what, int? value)
     {
         return !value.HasValue ? before + what + " is not with value " + value + " valid integer number" : null;
     }
-    internal static string NotValidXml(string before, string path, Exception ex)
+    public static string NotValidXml(string before, string path, Exception ex)
     {
         return before + path + AllStrings.space + TextOfExceptions(ex);
     }
-    internal static string ViolationSqlIndex(string before, string tableName, string abcToStringColumnsInIndex)
+    public static string ViolationSqlIndex(string before, string tableName, string abcToStringColumnsInIndex)
     {
         return before + $"{tableName} {abcToStringColumnsInIndex}";
     }
     #endregion
-    internal static string IsNotAllowed(string before, string what)
+    public static string IsNotAllowed(string before, string what)
     {
         return CheckBefore(before) + what + " is not allowed.";
     }
-    /// <summary>
-    ///     Je lichý
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="colName"></param>
-    /// <param name="col"></param>
-    /// <returns></returns>
-    internal static string IsOdd(string before, string colName, ICollection col)
+    
+    
+    
+    
+    
+    
+    
+    public static string IsOdd(string before, string colName, ICollection col)
     {
         return col.Count % 2 == 1 ? CheckBefore(before) + colName + " has odd number of elements " + col.Count : null;
     }
-    internal static string BadFormatOfElementInList(string before, object elVal, string listName)
+    public static string BadFormatOfElementInList(string before, object elVal, string listName)
     {
         return before + TranslateAble.i18n("BadFormatOfElement") + " " + SHSunamoExceptions.NullToStringOrDefault(elVal) +
         " in list " + listName;
     }
-    internal static string IsTheSame(string before, string fst, string sec)
+    public static string IsTheSame(string before, string fst, string sec)
     {
         return before + $"{fst} and {sec} has the same value";
     }
-    internal static string WrongExtension(string before, string path, string ext)
+    public static string WrongExtension(string before, string path, string ext)
     {
         return System.IO.Path.GetExtension(path) != ext ? before + path + "don't have " + ext + " extension" : null;
     }
-    internal static string WrongNumberOfElements(string before, int requireElements, string nameCount,
+    public static string WrongNumberOfElements(string before, int requireElements, string nameCount,
     IEnumerable<string> ele)
     {
         var c = ele.Count();
         return c != requireElements ? before + $" {nameCount} has {c}, it's required {requireElements}" : null;
     }
-    internal static string DirectoryWasntFound(string before, string directory)
+    public static string DirectoryWasntFound(string before, string directory)
     {
         return !Directory.Exists(directory)
         ? CheckBefore(before) + TranslateAble.i18n("Directory") + " " + directory +
         " wasn't found."
         : null;
     }
-    internal static string DivideByZero(string before)
+    public static string DivideByZero(string before)
     {
         return CheckBefore(before) + " is dividing by zero.";
     }
-    internal static string AnyElementIsNullOrEmpty(string before, string nameOfCollection, List<int> nulled)
+    public static string AnyElementIsNullOrEmpty(string before, string nameOfCollection, List<int> nulled)
     {
         return CheckBefore(before) + $"In {nameOfCollection} has indexes " + string.Join(AllStrings.comma, nulled) +
         " with null value";
     }
     #region Called from TemplateLoggerBase
-    internal static string NotEvenNumberOfElements(string before, string nameOfCollection)
+    public static string NotEvenNumberOfElements(string before, string nameOfCollection)
     {
         return CheckBefore(before) + nameOfCollection + " have odd elements count";
     }
-    internal static string PassedListInsteadOfArray<T>(string before, string variableName, List<T> v2)
+    public static string PassedListInsteadOfArray<T>(string before, string variableName, List<T> v2)
     {
         var ts = v2.ToString();
         if (CASunamoExceptions.IsListStringWrappedInArray(v2))
             return before + $" {variableName} is List<string>, was passed List<string> into params";
         return null;
     }
-    internal static string InvalidExactlyLength(string variableName, int length, int requiredLenght)
+    public static string InvalidExactlyLength(string variableName, int length, int requiredLenght)
     {
         return variableName + $" have length {length}, required {requiredLenght}";
     }
     #endregion
-    internal static string IsWhitespaceOrNull(string before, string variable, object data)
+    public static string IsWhitespaceOrNull(string before, string variable, object data)
     {
         var isNull = false;
         if (data == null)
@@ -105,39 +337,39 @@ internal class Exceptions
         else if (data.ToString().Trim() == string.Empty) isNull = true;
         return isNull ? CheckBefore(before) + variable + " is null" : null;
     }
-    internal static string UncommentNextRows(string before)
+    public static string UncommentNextRows(string before)
     {
         return before + "Uncomment next rows";
     }
-    /// <summary>
-    ///     https://stackoverflow.com/a/168922
-    /// </summary>
-    /// <param name="v"></param>
-    /// <param name="colName"></param>
-    /// <param name="col"></param>
-    /// <param name="indexName"></param>
-    /// <param name="index"></param>
-    /// <returns></returns>
-    internal static string OutOfRange(string v, string colName, ICollection col, string indexName, int index)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static string OutOfRange(string v, string colName, ICollection col, string indexName, int index)
     {
         return col.Count <= index
         ? CheckBefore(v) + $"{index} (variable {indexName}) is out of range in {colName}"
         : null;
     }
-    /// <summary>
-    ///     Zmena: metoda nezapisuje primo na konzoli, misto toho pouze vraci retezec
-    /// </summary>
-    internal static string FileHasExtensionNotParseableToImageFormat(string before, string fnOri)
+    
+    
+    
+    public static string FileHasExtensionNotParseableToImageFormat(string before, string fnOri)
     {
         return CheckBefore(before) + "File " + fnOri + " has wrong file extension";
     }
-    internal static string WrongCountInList2(int numberOfElementsWithoutPause, int numberOfElementsWithPause,
+    public static string WrongCountInList2(int numberOfElementsWithoutPause, int numberOfElementsWithPause,
     int arrLength)
     {
         return string.Format("Array should have {0} or {1} elements, have {2}", numberOfElementsWithoutPause,
         numberOfElementsWithPause, arrLength);
     }
-    internal static string HaveAllInnerSameCount(string before, List<List<string>> elements)
+    public static string HaveAllInnerSameCount(string before, List<List<string>> elements)
     {
         var first = elements[0].Count;
         List<int> wrongCount = new();
@@ -148,44 +380,44 @@ internal class Exceptions
         ? before + $"Elements {string.Join(AllChars.comma, wrongCount)} have different count than 0 (first)"
         : null;
     }
-    internal static string DirectoryExists(string before, string fulLPath)
+    public static string DirectoryExists(string before, string fulLPath)
     {
         return Directory.Exists(fulLPath)
         ? null
         : CheckBefore(before) + " " + TranslateAble.i18n("DoesnTExists") + ": " + fulLPath;
     }
-    internal static string FileExists(string before, string fulLPath)
+    public static string FileExists(string before, string fulLPath)
     {
-        //if (Path.ExistsFile(fulLPath) || Path.)
-        //{
-        //    return null;
-        //}
+        
+        
+        
+        
         return CheckBefore(before) + " " + TranslateAble.i18n("DoesnTExists") + ": " + fulLPath;
     }
-    internal static string CheckBackslashEnd(string before, string r)
+    public static string CheckBackslashEnd(string before, string r)
     {
         if (r.Length != 0)
             if (r[r.Length - 1] != AllChars.bs)
                 return CheckBefore(before) + TranslateAble.i18n("StringHasNotBeenInPathFormat") + "!";
         return null;
     }
-    internal static string FileWasntFoundInDirectory(string before, string path)
+    public static string FileWasntFoundInDirectory(string before, string path)
     {
         return CheckBefore(before) + "NotFound" + ": " + path;
     }
-    internal static string NotSupported(string v)
+    public static string NotSupported(string v)
     {
         return CheckBefore(v) + TranslateAble.i18n("NotSupported");
     }
-    internal static string IsNotNull(string before, string variableName, object variable)
+    public static string IsNotNull(string before, string variableName, object variable)
     {
         return variable != null ? CheckBefore(before) + variableName + " must be null." : null;
     }
-    internal static string ToManyElementsInCollection(string before, int max, int actual, string nameCollection)
+    public static string ToManyElementsInCollection(string before, int max, int actual, string nameCollection)
     {
         return CheckBefore(before) + actual + " elements in " + nameCollection + ", maximum is " + max;
     }
-    internal static string ArrayElementContainsUnallowedStrings(string before, string arrayName, int dex,
+    public static string ArrayElementContainsUnallowedStrings(string before, string arrayName, int dex,
     string valueElement, params string[] unallowedStrings)
     {
         var foundedUnallowed = unallowedStrings.Where(d => valueElement.Contains(d)).ToList();
@@ -195,96 +427,96 @@ internal class Exceptions
         string.Join(AllChars.comma, unallowedStrings)
         : null;
     }
-    internal static string StartIsHigherThanEnd(string before, int start, int end)
+    public static string StartIsHigherThanEnd(string before, int start, int end)
     {
         return start > end ? CheckBefore(before) + $"Start {start} is higher than end {end}" : null;
     }
-    internal static string WasNotKeysHandler(string before, string name, object keysHandler)
+    public static string WasNotKeysHandler(string before, string name, object keysHandler)
     {
         return keysHandler == null
         ? CheckBefore(before) + name + " " + TranslateAble.i18n("wasNotIKeysHandler")
         : null;
     }
-    internal static string FolderCantBeRemoved(string v, string folder)
+    public static string FolderCantBeRemoved(string v, string folder)
     {
         return CheckBefore(v) + TranslateAble.i18n("CanTDeleteFolder") + ": " + folder;
     }
-    /// <summary>
-    ///     Check whether in A3,4 is same count of elements
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="detailLocation"></param>
-    /// <param name="before2"></param>
-    /// <param name="after"></param>
-    internal static string ElementWasntRemoved(string before, string detailLocation, int before2, int after)
+    
+    
+    
+    
+    
+    
+    
+    public static string ElementWasntRemoved(string before, string detailLocation, int before2, int after)
     {
         return before2 == after
         ? CheckBefore(before) + TranslateAble.i18n("ElementWasntRemovedDuring") + ": " +
         detailLocation
         : null;
     }
-    /// <summary>
-    ///     https://stackoverflow.com/a/168922
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="folders"></param>
-    /// <returns></returns>
-    internal static string NoPassedFolders(string before, ICollection folders)
+    
+    
+    
+    
+    
+    
+    public static string NoPassedFolders(string before, ICollection folders)
     {
         return folders.Count == 0 ? CheckBefore(before) + TranslateAble.i18n("NoPassedFolderInto") : null;
     }
-    internal static string FileSystemException(string v, Exception ex)
+    public static string FileSystemException(string v, Exception ex)
     {
         return ex != null ? CheckBefore(v) + " " + TextOfExceptions(ex) : null;
     }
-    internal static string FuncionalityDenied(string before, string description)
+    public static string FuncionalityDenied(string before, string description)
     {
         return CheckBefore(before) + description;
     }
-    /// <summary>
-    ///     Is used when single (not list etc) bad arg is entered to method
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="valueVar"></param>
-    /// <param name="nameVar"></param>
-    /// <returns></returns>
-    internal static string InvalidParameter(string before, string valueVar, string nameVar)
+    
+    
+    
+    
+    
+    
+    
+    public static string InvalidParameter(string before, string valueVar, string nameVar)
     {
         return valueVar != WebUtility.UrlDecode(valueVar)
         ? CheckBefore(before) + valueVar + " is url encoded " + nameVar
         : null;
     }
-    internal static string ElementCantBeFound(string before, string nameCollection, string element)
+    public static string ElementCantBeFound(string before, string nameCollection, string element)
     {
         return CheckBefore(before) + element + "cannot be found in " + nameCollection;
     }
-    internal static string MoreCandidates(string before, List<string> list, string item)
+    public static string MoreCandidates(string before, List<string> list, string item)
     {
         return CheckBefore(before) + "Under" + " " + item + " is more candidates: " + Environment.NewLine +
         string.Join(Environment.NewLine, list);
     }
-    internal static string BadMappedXaml(string before, string nameControl, string additionalInfo)
+    public static string BadMappedXaml(string before, string nameControl, string additionalInfo)
     {
         return CheckBefore(before) + $"Bad mapped XAML in {nameControl}. {additionalInfo}";
     }
     #region Without parameters
-    internal static string MoreThanOneElement(string before, string listName, int count, string moreInfo = Consts.se)
+    public static string MoreThanOneElement(string before, string listName, int count, string moreInfo = Consts.se)
     {
         return count > 1
         ? CheckBefore(before) + listName + " has " + count + " elements, which is more than 1. " + moreInfo
         : null;
     }
-    internal static string NameIsNotSetted(string before, string nameControl, string nameFromProperty)
+    public static string NameIsNotSetted(string before, string nameControl, string nameFromProperty)
     {
         return string.IsNullOrWhiteSpace(nameFromProperty)
         ? CheckBefore(before) + nameControl + " " + TranslateAble.i18n("doesntHaveSettedName")
         : null;
     }
-    internal static string OnlyOneElement(string before, string colName, ICollection list)
+    public static string OnlyOneElement(string before, string colName, ICollection list)
     {
         return list.Count == 1 ? CheckBefore(before) + colName + " has only one element" : null;
     }
-    internal static string StringContainsUnallowedSubstrings(string before, string input,
+    public static string StringContainsUnallowedSubstrings(string before, string input,
     params string[] unallowedStrings)
     {
         List<string> foundedUnallowed = new();
@@ -296,18 +528,18 @@ internal class Exceptions
         string.Join(AllStrings.space, unallowedStrings)
         : null;
     }
-    internal static string DoesntHaveRequiredType(string before, string variableName)
+    public static string DoesntHaveRequiredType(string before, string variableName)
     {
         return before + variableName + TranslateAble.i18n("DoesnTHaveRequiredType") + ".";
     }
     #endregion
     #region From easy copy from ExceptionsShared64.cs - all ok 16-10-21
-    /// <summary>
-    ///     Start with ConstsSE.Exception to identify occur
-    /// </summary>
-    /// <param name="ex"></param>
-    /// <param name="alsoInner"></param>
-    internal static string TextOfExceptions(Exception ex, bool alsoInner = true)
+    
+    
+    
+    
+    
+    public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
         if (ex == null) return Consts.se;
         StringBuilder sb = new();
@@ -322,17 +554,17 @@ internal class Exceptions
         var r = sb.ToString();
         return r;
     }
-    internal static string ArgumentOutOfRangeException(string before, string paramName, string message)
+    public static string ArgumentOutOfRangeException(string before, string paramName, string message)
     {
         if (paramName == null) paramName = string.Empty;
         if (message == null) message = string.Empty;
         return CheckBefore(before) + paramName + " " + message;
     }
-    internal static string IsNull(string before, string variableName, object variable)
+    public static string IsNull(string before, string variableName, object variable)
     {
         return variable == null ? CheckBefore(before) + variableName + " " + "is null" + "." : null;
     }
-    internal static string NotImplementedCase(string before, object niCase)
+    public static string NotImplementedCase(string before, object niCase)
     {
         var fr = string.Empty;
         if (niCase != null)
@@ -343,10 +575,10 @@ internal class Exceptions
             else
                 fr += niCase.ToString();
         }
-        return CheckBefore(before) + "Not implemented case" + fr + " . internal program error. Please contact developer" +
+        return CheckBefore(before) + "Not implemented case" + fr + " . public program error. Please contact developer" +
         ".";
     }
-    internal static string Custom(string before, string message)
+    public static string Custom(string before, string message)
     {
         return CheckBefore(before) + message;
     }
@@ -356,13 +588,13 @@ internal class Exceptions
     }
     #endregion
     #region from ExceptionsShared.cs
-    /// <summary>
-    ///     Verify whether A2 contains A3
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="originalText"></param>
-    /// <param name="shouldContains"></param>
-    internal static string NotContains(string before, string originalText, params string[] shouldContains)
+    
+    
+    
+    
+    
+    
+    public static string NotContains(string before, string originalText, params string[] shouldContains)
     {
         List<string> notContained = new();
         foreach (var item in shouldContains)
@@ -372,96 +604,96 @@ internal class Exceptions
         ? null
         : CheckBefore(before) + originalText + " dont contains: " + string.Join(AllStrings.comma, notContained);
     }
-    internal static string FolderCannotBeDeleted(string v, string repairedBlogPostsFolder, Exception ex)
+    public static string FolderCannotBeDeleted(string v, string repairedBlogPostsFolder, Exception ex)
     {
         return v + repairedBlogPostsFolder + TextOfExceptions(ex);
     }
-    internal static string HasNotKeyDictionary<Key, Value>(string v, string nameDict, IDictionary<Key, Value> qsDict,
+    public static string HasNotKeyDictionary<Key, Value>(string v, string nameDict, IDictionary<Key, Value> qsDict,
     Key remains)
     {
         return !qsDict.ContainsKey(remains) ? CheckBefore(v) + nameDict + " does not contains key " + remains : null;
     }
-    internal static string CannotCreateDateTime(string v, int year, int month, int day, int hour, int minute, int seconds,
+    public static string CannotCreateDateTime(string v, int year, int month, int day, int hour, int minute, int seconds,
     Exception ex)
     {
         return v +
         $"Cannot create DateTime with: year: {year} month: {month} day: {day} hour: {hour} minute: {minute} seconds: {seconds} " +
         TextOfExceptions(ex);
     }
-    internal static string IsEmpty(string before, IEnumerable folders, string colName,
+    public static string IsEmpty(string before, IEnumerable folders, string colName,
     string additionalMessage = Consts.se)
     {
         if (string.IsNullOrEmpty(additionalMessage))
         {
             throw new ArgumentException($"'{nameof(additionalMessage)}' cannot be null or empty.", nameof(additionalMessage));
         }
-        // Proto�e Linq to neum� a extension metody tu nebudu tahat https://stackoverflow.com/a/168922
+        
         return folders.OfType<object>().Count() == 0
         ? before + colName + " has no elements. " + additionalMessage
         : null;
     }
-    internal const string sp = AllStrings.space;
-    internal static string CannotMoveFolder(string before, string item, string nova, Exception ex)
+    public const string sp = AllStrings.space;
+    public static string CannotMoveFolder(string before, string item, string nova, Exception ex)
     {
         return before + $"Cannot move folder from {item} to {nova}" + sp + TextOfExceptions(ex);
     }
-    internal static string ExcAsArg(string before, Exception ex, string message)
+    public static string ExcAsArg(string before, Exception ex, string message)
     {
         return before + message + AllStrings.space + TextOfExceptions(ex);
     }
-    internal static string Ftp(string before, Exception ex, string message)
+    public static string Ftp(string before, Exception ex, string message)
     {
         return before + message + AllStrings.space + TextOfExceptions(ex);
     }
-    internal static string IO(string before, string message)
+    public static string IO(string before, string message)
     {
         return before + message;
     }
-    internal static string InvalidOperation(string before, string message)
+    public static string InvalidOperation(string before, string message)
     {
         return before + message;
     }
-    internal static string ArgumentOutOfRange(string before, string message)
+    public static string ArgumentOutOfRange(string before, string message)
     {
         return before + message;
     }
-    internal static string Format(string before, string message)
+    public static string Format(string before, string message)
     {
         return before + message;
     }
-    internal static string FtpSecurityNotAvailable(string before, string message)
+    public static string FtpSecurityNotAvailable(string before, string message)
     {
         return before + message;
     }
-    internal static string FtpCommand(string before, object s)
+    public static string FtpCommand(string before, object s)
     {
         return before + DumpAsString(s);
     }
-    internal static string FtpAuthentication(string before, object s)
+    public static string FtpAuthentication(string before, object s)
     {
         return before + DumpAsString(s);
     }
-    internal static string DumpAsString(object s)
+    public static string DumpAsString(object s)
     {
-        return null; //RHSE.DumpAsXml(s);
+        return null; 
     }
-    internal static string InvalidCast(string before, string message)
-    {
-        return before + message;
-    }
-    internal static string ObjectDisposed(string before, string message)
+    public static string InvalidCast(string before, string message)
     {
         return before + message;
     }
-    internal static string Timeout(string before, string message)
+    public static string ObjectDisposed(string before, string message)
     {
         return before + message;
     }
-    internal static string FtpMissingSocket(string before, Exception ex)
+    public static string Timeout(string before, string message)
+    {
+        return before + message;
+    }
+    public static string FtpMissingSocket(string before, Exception ex)
     {
         return before + TextOfExceptions(ex);
     }
-    internal static string UriFormat(string before, string url, Func<string, bool> uhIsUri)
+    public static string UriFormat(string before, string url, Func<string, bool> uhIsUri)
     {
         if (uhIsUri(url))
         {
@@ -471,14 +703,14 @@ internal class Exceptions
     }
     #endregion
     #region From easy copy from ExceptionsShared64.cs
-    internal static bool RaiseIsNotWindowsPathFormat;
-    internal static Func<string, bool> IsWindowsPathFormat;
-    internal static string NotImplementedMethod(string before)
+    public static bool RaiseIsNotWindowsPathFormat;
+    public static Func<string, bool> IsWindowsPathFormat;
+    public static string NotImplementedMethod(string before)
     {
         return CheckBefore(before) +
-        "Not implemented case. internal program error. Please contact developer" + ".";
+        "Not implemented case. public program error. Please contact developer" + ".";
     }
-    internal static string IsNotWindowsPathFormat(string before, string argName, string argValue)
+    public static string IsNotWindowsPathFormat(string before, string argName, string argValue)
     {
         if (RaiseIsNotWindowsPathFormat)
         {
@@ -488,7 +720,7 @@ internal class Exceptions
         }
         return null;
     }
-    internal static string IsNullOrWhitespace(string before, string argName, string argValue)
+    public static string IsNullOrWhitespace(string before, string argName, string argValue)
     {
         string addParams;
         if (argValue == null)
@@ -508,9 +740,9 @@ internal class Exceptions
         }
         return null;
     }
-    internal static StringBuilder sbAdditionalInfoInner = new();
-    internal static StringBuilder sbAdditionalInfo = new();
-    internal static object FS { get; private set; }
+    public static StringBuilder sbAdditionalInfoInner = new();
+    public static StringBuilder sbAdditionalInfo = new();
+    public static object FS { get; private set; }
     private static string AddParams()
     {
         sbAdditionalInfo.Insert(0, Environment.NewLine);
@@ -525,28 +757,28 @@ internal class Exceptions
     }
     #endregion
     #region from Exceptions.cs - all ok 16-10-21
-    internal static string DifferentCountInLists(string before, string namefc, int countfc, string namesc, int countsc)
+    public static string DifferentCountInLists(string before, string namefc, int countfc, string namesc, int countsc)
     {
         if (countfc != countsc)
-            // sess and SunamoPageHelperSunamo have the i18n method. Sess calculates that the text translation is in dictionaries, while SunamoPageHelperSunamo needs to have a method set for this. If this doesn't work, replace it with SunamoPageHelperSunamo
-            // coz SunamoPageHelperSunamo is not in SunamoExceptions available
+            
+            
             return CheckBefore(before) + " " + TranslateAble.i18n("DifferentCountElementsInCollection") + " " +
             string.Concat(namefc + AllStrings.swda + countfc) + " vs. " +
             string.Concat(namesc + AllStrings.swda + countsc);
         return null;
     }
-    internal static string FirstLetterIsNotUpper(string before, string p)
+    public static string FirstLetterIsNotUpper(string before, string p)
     {
         return p.Length == 0 ? null :
         char.IsLower(p[0]) ? CheckBefore(before) + "First letter is not upper: " + p : null;
     }
-    internal static string KeyNotFound<T, U>(string before, IDictionary<T, U> en, string dictName, T key)
+    public static string KeyNotFound<T, U>(string before, IDictionary<T, U> en, string dictName, T key)
     {
         return !en.ContainsKey(key)
         ? before + key + " " + TranslateAble.i18n("isNotExistsInDictionary") + " " + dictName
         : null;
     }
-    internal static string DuplicatedElements(string before, string nameOfVariable, IList<string> d,
+    public static string DuplicatedElements(string before, string nameOfVariable, IList<string> d,
     string message = Consts.se)
     {
         return d.Count != 0
@@ -554,46 +786,46 @@ internal class Exceptions
         " " + message
         : null;
     }
-    internal static string ZeroOrMoreThanOne(string before, string nameOfVariable, List<string> list)
+    public static string ZeroOrMoreThanOne(string before, string nameOfVariable, List<string> list)
     {
         return list.Count == 0 || list.Count > 1
         ? before + $"{list.Count} elements in {nameOfVariable} which is zero or more than one"
         : null;
     }
-    /// <summary>
-    ///     nechci mít v SunamoExceptions žádné pomocné metody, jedna dělá další a nabaluje se to
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="nameOfVariable"></param>
-    /// <param name="n"></param>
-    /// <returns></returns>
-    internal static string IsNotPositiveNumber(string before, string nameOfVariable, int? n)
+    
+    
+    
+    
+    
+    
+    
+    public static string IsNotPositiveNumber(string before, string nameOfVariable, int? n)
     {
         return !n.HasValue ? before + nameOfVariable + " is not int" :
         n.Value > 0 ? null : nameOfVariable + " is int but not > 0";
     }
-    //internal static string IsNotPositiveNumber(string before, string nameOfVariable, string n,
-    //    bool excIfIsFloat = false, bool replaceCommaForDot = false)
-    //{
-    //    bool isInt = BTS.IsInt(n, excIfIsFloat, replaceCommaForDot);
-    //    return !isInt ? before + nameOfVariable + " is not int" : BTS.lastInt > 0 ? null : nameOfVariable + " is int but not > 0";
-    //}
-    /// <summary>
-    ///     no additional check
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="item"></param>
-    /// <returns></returns>
-    internal static string NotExists(string before, string item)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static string NotExists(string before, string item)
     {
         return before + item + " not exists";
     }
-    internal static string CheckBackSlashEnd(string before, string r)
+    public static string CheckBackSlashEnd(string before, string r)
     {
         if (!r.EndsWith("\\")) return before + " " + r + " don't end with \\";
         return null;
     }
-    internal static string Socket(string before, int socketError)
+    public static string Socket(string before, int socketError)
     {
         return before + " socket error: " + socketError;
     }
