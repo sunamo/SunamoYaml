@@ -1,3 +1,5 @@
+
+namespace SunamoYaml;
 using System.Diagnostics;
 using System.Text;
 

@@ -1,3 +1,5 @@
+
+namespace SunamoYaml;
 public class AllChars
 {
     public static List<char> vsZnakyWithoutSpecial;
