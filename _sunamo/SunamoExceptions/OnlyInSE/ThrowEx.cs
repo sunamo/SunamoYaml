@@ -1,6 +1,3 @@
-
-using System.Diagnostics.CodeAnalysis;
-
 namespace SunamoYaml._sunamo.SunamoExceptions.OnlyInSE;
 internal class ThrowEx
 {
