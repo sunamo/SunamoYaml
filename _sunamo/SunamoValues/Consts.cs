@@ -1,4 +1,4 @@
-namespace SunamoYaml;
+namespace SunamoYaml._sunamo.SunamoValues;
 
 
 
