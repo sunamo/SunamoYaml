@@ -1,0 +1,9 @@
+- text: s
+  date: 2007-08-06T00:00:00.0000000
+  anonymousType:
+    given: Dorothy
+    family: Gale
+  items:
+  - name: a
+  - id: 1
+    name: b
