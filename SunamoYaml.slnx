@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoYaml.Tests\\SunamoYaml.Tests.csproj" />
+  <Project Path="RunnerYaml\\RunnerYaml.csproj" />
+  <Project Path="SunamoYaml\SunamoYaml.csproj" />
+</Solution>
