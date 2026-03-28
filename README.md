@@ -1,16 +1,10 @@
 # SunamoYaml
 
-Working with yaml
+A .NET library for working with YAML files, built on top of [YamlDotNet](https://github.com/aaubry/YamlDotNet).
 
 ## Overview
 
 SunamoYaml is part of the Sunamo package ecosystem, providing modular, platform-independent utilities for .NET development.
-
-## Main Components
-
-### Key Classes
-
-- **Yaml**
 
 ## Installation
 
@@ -20,15 +14,14 @@ dotnet add package SunamoYaml
 
 ## Dependencies
 
-- **Microsoft.Extensions.Logging.Abstractions** (v9.0.3)
+- **YamlDotNet**
+- **Microsoft.Extensions.Logging.Abstractions**
 
 ## Package Information
 
 - **Package Name**: SunamoYaml
-- **Version**: 25.3.29.1
-- **Target Framework**: net9.0
+- **Target Frameworks**: net10.0, net9.0, net8.0
 - **Category**: Platform-Independent NuGet Package
-- **Source Files**: 6
 
 ## Related Packages
 

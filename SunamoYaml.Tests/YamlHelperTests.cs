@@ -4,29 +4,32 @@ using System.Threading.Tasks;
 
 namespace SunamoYaml.Tests;
 
+/// <summary>
+/// Tests for YAML loading and saving functionality using YamlDotNet library.
+/// </summary>
 public class YamlHelperTests
 {
-    string path = null;
-    const string s = "s";
-    const string ixTest = "text";
+    private string filePath = null!;
+    private const string expectedValue = "s";
+    private const string yamlKey = "text";
 
-    //[Fact]
+    /// <summary>
+    /// Tests loading a YAML file and verifying that a specific key-value pair can be read correctly.
+    /// </summary>
+    [Fact]
     public async Task LoadYaml()
     {
         LoadDefaultPath();
 
-        // Setup the input
-        var input = new StringReader(await File.ReadAllTextAsync(path));
+        var reader = new StringReader(await File.ReadAllTextAsync(filePath));
 
-        // Load the stream
-        var yaml = new YamlStream();
-        yaml.Load(input);
+        var yamlStream = new YamlStream();
+        yamlStream.Load(reader);
 
-        // Examine the stream
-        var mapping = (YamlMappingNode)yaml.Documents[0].RootNode;
+        var mapping = (YamlMappingNode)yamlStream.Documents[0].RootNode;
 
-        var text = mapping[ixTest];
-        Assert.Equal(s, text.ToString());
+        var text = mapping[yamlKey];
+        Assert.Equal(expectedValue, text.ToString());
     }
 
     private void LoadDefaultPath()
@@ -34,19 +37,20 @@ public class YamlHelperTests
         ThisApp.Name = "sunamo.Tests";
         ThisApp.Project = "SunamoYaml.Tests";
 
-        path = TestHelper.GetFileInProjectsFolder("test.yaml");
+        filePath = TestHelper.GetFileInProjectsFolder("test.yaml");
     }
 
-    //[Fact]
+    /// <summary>
+    /// Tests serializing an object graph to YAML format and writing it to a file.
+    /// </summary>
+    [Fact]
     public void SaveYaml()
     {
         LoadDefaultPath();
 
-        // Four node types: Alias, Mapping, Scalar, Sequence
-
-        var o = new
+        var testObject = new
         {
-            text = s,
+            text = expectedValue,
             date = new DateTime(2007, 8, 6),
             anonymousType = new
             {
@@ -55,25 +59,30 @@ public class YamlHelperTests
             },
             items = new[]
             {
-                    new
-                    {
-                        id = 0,
-                        name = "a"
-                    },
-                    new
-                    {
-                        id = 1,
-                        name = "b"
-                    }
+                new
+                {
+                    id = 0,
+                    name = "a"
+                },
+                new
+                {
+                    id = 1,
+                    name = "b"
                 }
+            }
         };
 
         var list = new List<object>();
-        list.Add(o);
+        list.Add(testObject);
 
         var serializer = new Serializer();
-        StringWriter sw = new StringWriter();
-        serializer.Serialize(sw, list);
-        File.WriteAllText(path, sw.ToString());
+        var stringWriter = new StringWriter();
+        serializer.Serialize(stringWriter, list);
+        File.WriteAllText(filePath, stringWriter.ToString());
+
+        Assert.True(File.Exists(filePath));
+        var content = File.ReadAllText(filePath);
+        Assert.Contains("Dorothy", content);
+        Assert.Contains("Gale", content);
     }
 }
