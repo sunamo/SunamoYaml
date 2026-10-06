@@ -1,5 +1,10 @@
 # SunamoYaml
 
+## Short description
+
+Knihovna pro práci se soubory YAML postavená nad YamlDotNet. Součást sbírky pinp s testy a Runnerem.
+
+
 A .NET library for working with YAML files, built on top of [YamlDotNet](https://github.com/aaubry/YamlDotNet).
 
 ## Overview
